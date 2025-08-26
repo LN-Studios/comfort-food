@@ -11,6 +11,13 @@ config_version=5
 [application]
 
 config/name="Comfort Food"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Signals="*res://global/signals.gd"
+NameBank="*res://global/name_bank.gd"
+Prop="*res://global/prop.gd"
+Main="*res://global/main.gd"

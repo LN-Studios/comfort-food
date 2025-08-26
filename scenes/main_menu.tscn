@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5s5ey0veq7v3"]
 
-[ext_resource type="Script" path="res://menu/main_menu.gd" id="1_2koqy"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_2koqy"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_0jyov"]
 
@@ -14,7 +14,7 @@ base_texture = SubResource("CurveTexture_0jyov")
 texture = SubResource("MeshTexture_1l6db")
 modulate_color = Color(0.615282, 0.317919, 0.0438373, 1)
 
-[node name="Control" type="Control"]
+[node name="main menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,3 +62,25 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
 text = "New Run"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "LN Studios
+"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_new_run"]
