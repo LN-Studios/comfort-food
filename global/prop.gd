@@ -1,16 +1,15 @@
 extends Node
 
-
-enum Type {
-	Meat,
-	Vegetable,
-	Fruit,
-	Grain,
+var Type = {
+	Meat = "Meat",
+	Vegetable = "Veggie",
+	Fruit = "Fruit",
+	Grain = "Grain",
 }
 
-enum Flavor {
-	Sweet,
-	Savory,
-	Green,
-	Spicy,
+var Flavor = {
+	Sweet = "Sweet",
+	Savory = "Savory",
+	Spicy = "Spicy",
+	Salty = "Salty",
 }

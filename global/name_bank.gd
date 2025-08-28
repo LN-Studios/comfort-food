@@ -1,6 +1,6 @@
 extends Node
 
-enum Fem {
+enum Names {
 	Abigal,
 	Bailey,
 	Cass,
@@ -24,15 +24,9 @@ enum Fem {
 	Bridget,
 	Lily,
 	Ella,
-}
-
-enum Nonbinary {
 	Kai,
 	Sage,
 	Fern,
-}
-
-enum Masc {
 	Adam,
 	Andrew,
 	Austin,
@@ -75,14 +69,8 @@ enum Masc {
 enum Blacklist {
 }
 
-func get_fem() -> String:
-	return pick_name(Fem.values())
-
-func get_nonbinary() -> String:
-	return pick_name(Nonbinary.values())
-
-func get_masc() -> String:
-	return pick_name(Masc.values())
+func get_random_name() -> String:
+	return pick_name(Names.values())
 	
 func pick_name(list: Array) -> String:
 	var pick = list[randi()]

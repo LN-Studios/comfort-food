@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4kcur64d32vg"]
+
+[ext_resource type="Script" path="res://ui/item_card.gd" id="1_1rkvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbmwb"]
+bg_color = Color(1, 0.97555, 0.880299, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="item card" type="Control" node_paths=PackedStringArray("name_label", "rarity_label", "value_label")]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 3
+anchor_right = 0.087
+anchor_bottom = 0.231
+offset_right = -0.224007
+offset_bottom = 0.311996
+script = ExtResource("1_1rkvx")
+name_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/name")
+rarity_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/rarity")
+value_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/value")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qbmwb")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="rarity" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "U"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "99"
+horizontal_alignment = 2
+
+[node name="name" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "name"
+clip_text = true
+
+[node name="prop" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Vegetable"
